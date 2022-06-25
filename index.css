@@ -1,0 +1,159 @@
+/*
+    Styling the Carousel
+
+    1) Set a max-width of 600px & position relative on the div 'carousel'
+    2) Hide all 'carousel-item' divs
+    3) Make sure all images inside 'carousel-item' have a max-width that matches the main 
+    'carousel' div
+    4) All images within 'carousel-item' must be responsive, so think about setting a 
+    max-width on the images and how you'd make the image 100% width of 'carousel-item' 
+    5) We want the first 'carousel-item' to be visible, think about the class we added 
+    to the first item. Make sure that class is always shown
+    6) The 'carousel-actions' needs to be on top of the slider, so think about positioning 
+    and how you can use relative/absolute positioning to put the 'carousel-actions' on top of 
+    the slider
+    7) Make some beautiful buttons!
+    8) Space those buttons from the left & right - we want to make sure they're not touching 
+    the edges of the slides, but adequately spaced
+*/
+body{
+    margin: 0;
+    background-color: black;
+}
+
+#carousel {
+    max-width: 600px;
+    position: relative;
+    margin: 0 auto;
+    max-height: 304px;
+    border: 2px solid ;
+}
+
+.carousel-item,
+.carousel-item-hidden {
+    display: none;
+}
+
+.carousel-item img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+p {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform:translateX(-50%) translateY(50%);
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    padding: 10px 30px;
+    text-shadow: 0px 0px 5px black;
+    width: 100%;
+}
+
+.carousel-item-visible {
+    display: block;
+    animation: fadeVisibility 0.5s;
+}
+
+
+
+.carousel-actions {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: whitesmoke;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#carousel-button-prev {
+    margin-left: 20px;
+}
+
+#carousel-button-next {
+    margin-right: 20px;
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: salmon;
+    color: #fff;
+    max-width: 600px;
+    width: 100%;
+    margin: 25px auto;
+    border: 5px solid gold;
+    padding-bottom: 5px;
+    border-radius: 23px;
+    text-shadow: 5px 5px 5px black;
+}
+
+.dot{
+    cursor: none;
+    background-color: #bbb;
+    width: 15px;
+    height: 15px;
+    margin: 5px 2px;
+    display: inline-block;
+    border-radius: 50%;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+  }
+
+
+#stopSlide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 4px;
+    right: 0; 
+    border-radius: 5px;
+    font-size: 10px;
+    width: 25px;
+    height: 25px;
+    text-shadow: 0px 0px 5px black;
+    color: #fff;
+    background-color: rgba(245, 245, 245, 0.3);
+}
+
+@keyframes fadeVisibility {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
